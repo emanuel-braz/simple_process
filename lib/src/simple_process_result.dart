@@ -1,7 +1,6 @@
 import 'dart:io';
 
 class SimpleProcessResult {
-
   /// Process result
   final ProcessResult? processResult;
 
@@ -12,7 +11,7 @@ class SimpleProcessResult {
 
   /// Return true if ok, else false
   bool get isOk => (processResult != null && processResult?.exitCode == 0);
-  
+
   /// Exit code
   int get exitCode =>
       processResult?.exitCode ?? processException?.errorCode ?? 0;

@@ -1,6 +1,6 @@
 name: simple_process
 description: Run sync and async terminal processes, with some options to make it simpler to deal with different scenarios
-version: 0.1.1
+version: 0.1.2
 homepage: https://github.com/emanuel-braz/simple_process
 
 environment:
