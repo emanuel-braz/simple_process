@@ -11,8 +11,13 @@ class SimpleProcessOptions<T> {
   /// Not used yet
   final int maxConcurrentProcesses;
 
+  /// Run in Shell
   final bool runInShell;
+
+  /// stdoutEncoding
   final Encoding stdoutEncoding;
+
+  /// stderrEncoding
   final Encoding stderrEncoding;
 
   /// Show all outputs (Debug mode) - default = false
@@ -23,6 +28,7 @@ class SimpleProcessOptions<T> {
   ///   runs: binary_app -c <config> <command>
   final String? config;
 
+  /// Options
   SimpleProcessOptions(
       {baseDir,
       this.binary,

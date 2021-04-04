@@ -4,10 +4,12 @@ import 'package:simple_process/src/simple_process_main.dart';
 import 'package:simple_process/src/simple_process_options.dart';
 import 'package:simple_process/src/simple_process_result.dart';
 
+/// ProcessRunner
 class ProcessRunner {
   final SimpleProcessOptions simpleProcessOptions;
   ProcessRunner(this.simpleProcessOptions);
 
+  /// runProcess
   dynamic runProcess<T>(
     String exec, {
     List<String>? args,
@@ -30,6 +32,7 @@ class ProcessRunner {
     }
   }
 
+  /// runSyncProcess
   SimpleProcessResult runSyncProcess(
     String exec, {
     List<String>? args = const <String>[],
@@ -62,10 +65,11 @@ class ProcessRunner {
         return simpleResultException;
       }
     } catch (e) {
-      throw e;
+      rethrow;
     }
   }
 
+  /// runAsyncProcess
   Future<SimpleProcessResult> runAsyncProcess(
     String exec, {
     List<String>? args = const <String>[],

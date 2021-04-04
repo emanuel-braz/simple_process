@@ -9,6 +9,7 @@ class SimpleProcessBase<T> {
   SimpleProcessBase(this.simpleProcessOptions)
       : _processRunner = ProcessRunner(simpleProcessOptions);
 
+  /// run process
   T run(
           {String? exec,
           List<String>? args,
