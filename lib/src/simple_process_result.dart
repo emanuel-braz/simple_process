@@ -1,14 +1,14 @@
 import 'dart:io';
 
 class SimpleProcessResult {
-
   final ProcessResult? processResult;
   final ProcessException? processException;
 
   SimpleProcessResult({this.processResult, this.processException});
 
   bool get isOk => (processResult != null && processResult?.exitCode == 0);
-  int get exitCode => processResult?.exitCode ?? processException?.errorCode ?? 0;
+  int get exitCode =>
+      processResult?.exitCode ?? processException?.errorCode ?? 0;
 
   bool get hasOutput =>
       processResult?.stdout.runtimeType == String &&
@@ -21,7 +21,9 @@ class SimpleProcessResult {
 
   String get resultMessage => isOk
       ? (processResult?.stdout.toString() ?? processResult?.toString() ?? '')
-      : (processException?.toString() ?? processResult?.stderr.toString() ?? '');
+      : (processException?.toString() ??
+          processResult?.stderr.toString() ??
+          '');
 
   @override
   String toString() => resultMessage;
