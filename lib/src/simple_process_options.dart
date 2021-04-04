@@ -2,7 +2,6 @@ import 'dart:convert';
 import 'dart:io';
 
 class SimpleProcessOptions<T> {
-
   /// working directory for commands to run in
   late String baseDir;
 

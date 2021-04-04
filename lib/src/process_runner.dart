@@ -73,7 +73,6 @@ class ProcessRunner {
     HandlerFunction? handlerFn,
     bool? skipOnError,
   }) async {
-    
     skipOnError = skipOnError ?? false;
     showOutput = showOutput ?? simpleProcessOptions.showOutput;
 

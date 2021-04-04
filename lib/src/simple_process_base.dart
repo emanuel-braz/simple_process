@@ -3,7 +3,6 @@ import 'package:simple_process/src/simple_process_main.dart';
 import 'package:simple_process/src/simple_process_options.dart';
 
 class SimpleProcessBase<T> {
-  
   final SimpleProcessOptions simpleProcessOptions;
   final ProcessRunner _processRunner;
 

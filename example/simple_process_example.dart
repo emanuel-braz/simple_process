@@ -12,7 +12,6 @@ void main() {
 }
 
 runSync() {
-  
   var runner = SimpleProcess(SimpleProcessOptions(
       binary: binary // default binary for this `SimpleProcess`.
       ));
@@ -72,8 +71,9 @@ runAsync() async {
   });
 
   var lsResult = await asyncRunner.run(
-      args: [ls.a],
+    args: [ls.a],
   );
 
-  print('\n\nExecuted ${ls.binaryName} ${ls.a}: OK == ${lsResult.isOk} \n${lsResult.resultMessage}\n');
+  print(
+      '\n\nExecuted ${ls.binaryName} ${ls.a}: OK == ${lsResult.isOk} \n${lsResult.resultMessage}\n');
 }

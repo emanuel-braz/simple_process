@@ -28,7 +28,6 @@ void main() {
     });
 
     test('List files on Linux/MacOs successfully', () {
-      
       if (Platform.isWindows) return; // this is not a valid windows OS test
 
       var result = syncProcess.run(exec: BinaryLs().binaryName);
