@@ -53,6 +53,13 @@ class ProcessRunner {
       var simpleResult = SimpleProcessResult(processResult: result);
       if (showOutput == true) stdout.write(simpleResult.resultMessage);
       handlerFn?.call(simpleResult);
+
+      if (skipOnError == false && simpleResult.exitCode != 0) {
+        simpleResult.processException = ProcessException(
+            exec, [...?args], result.stderr ?? result.stdout, result.exitCode);
+        throw simpleResult;
+      }
+
       return simpleResult;
     } on ProcessException catch (e) {
       var simpleResultException = SimpleProcessResult(processException: e);
@@ -89,6 +96,13 @@ class ProcessRunner {
       var simpleResult = SimpleProcessResult(processResult: result);
       if (showOutput == true) stdout.write(simpleResult.resultMessage);
       handlerFn?.call(simpleResult);
+
+      if (skipOnError == false && simpleResult.exitCode != 0) {
+        simpleResult.processException = ProcessException(
+            exec, [...?args], result.stderr ?? result.stdout, result.exitCode);
+        throw simpleResult;
+      }
+
       return simpleResult;
     }).catchError((e) {
       var simpleResultException = SimpleProcessResult(processException: e);

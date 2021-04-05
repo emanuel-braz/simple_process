@@ -2,15 +2,15 @@ import 'dart:io';
 
 class SimpleProcessResult {
   /// Process result
-  final ProcessResult? processResult;
+  late ProcessResult? processResult;
 
   /// Process exception
-  final ProcessException? processException;
+  late ProcessException? processException;
 
   SimpleProcessResult({this.processResult, this.processException});
 
   /// Return true if ok, else false
-  bool get isOk => (processResult != null && processResult?.exitCode == 0);
+  bool get isOk => (processResult != null && (processResult?.exitCode == 0));
 
   /// Exit code
   int get exitCode =>
